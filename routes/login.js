@@ -27,7 +27,7 @@ router.get('/', csrfProtection, function (req, res, next) {
         // (e.g. your arch-enemy logging in...)
         return hydra.acceptLoginRequest(challenge, {
           // All we need to do is to confirm that we indeed want to log in the user.
-          subject: response.subject
+          subject: "77777"
         }).then(function (response) {
           // All we need to do now is to redirect the user back to hydra!
           res.redirect(response.redirect_to);
@@ -68,7 +68,7 @@ router.post('/', csrfProtection, function (req, res, next) {
   // Seems like the user authenticated! Let's tell hydra...
   hydra.acceptLoginRequest(challenge, {
     // Subject is an alias for user ID. A subject can be a random string, a UUID, an email address, ....
-    subject: 'foo@bar.com',
+    subject: '77777',
 
     // This tells hydra to remember the browser and automatically authenticate the user in future requests. This will
     // set the "skip" parameter in the other route to true on subsequent requests!

@@ -36,6 +36,7 @@ router.get('/', csrfProtection, function (req, res, next) {
             // This data will be available when introspecting the token. Try to avoid sensitive information here,
             // unless you limit who can introspect tokens.
             // access_token: { foo: 'bar' },
+            access_token: { mics_id: response.subject },
 
             // This data will be available in the ID token.
             // id_token: { baz: 'bar' },
@@ -102,7 +103,7 @@ router.post('/', csrfProtection, function (req, res, next) {
         session: {
           // This data will be available when introspecting the token. Try to avoid sensitive information here,
           // unless you limit who can introspect tokens.
-          // access_token: { foo: 'bar' },
+          access_token: { mics_id: response.subject },
 
           // This data will be available in the ID token.
           // id_token: { baz: 'bar' },
